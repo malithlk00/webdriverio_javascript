@@ -1,0 +1,28 @@
+{
+  "name": "network-sourcing-demo-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js",
+    "wdio:test": "npx wdio run ./wdio.conf.js --spec Pagination.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "@babel/register": "^7.22.15",
+    "@wdio/allure-reporter": "^8.24.2",
+    "@wdio/cli": "^8.24.2",
+    "@wdio/local-runner": "^8.24.2",
+    "@wdio/mocha-framework": "^8.24.2",
+    "@wdio/spec-reporter": "^8.24.2"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
