@@ -1,26 +1,42 @@
 import Page from '../pages/basePage'
-import {getText, scrollAndClick} from '../helpers/actions'
+import {getText, scrollAndClick,scrollAndType} from '../helpers/actions'
+
+class LoginPage extends Page {
+
+    get usernameTxtbox () { return $("//*[@data-test='username']") }
+    get passwordTxtbox () { return $("//*[@data-test='password']") }
+    get loginBtn () { return $("//*[@data-test='login-button']") }
+    get errorMsg () { return $(".error-message-container.error")}
 
 
-class HomePage {
-
-    get burgerMenu () { return $("#react-burger-menu-btn") }
-    get logOutBtn () { return $("#logout_sidebar_link") }
-
-
-    
-    // open (path) {
-    //     return super.open(path);
-    // }
-
-    async clickOnMenu(){
-        return scrollAndClick(await this.burgerMenu);
+    open (path) {
+        return super.open(path);
     }
 
+    async enterUsername(username){
+       scrollAndType(await this.usernameTxtbox, username)
+       await browser.pause(1000)
+       console.log("entered username : " + username)
+    }
 
+    async clearUsername(){
+        await this.usernameTxtbox.clearValue();
+    }
 
-    async clickOnLogout () {
-        return scrollAndClick(await this.logOutBtn);
+    async enterPassword(password){
+        scrollAndType(await this.passwordTxtbox, password)
+        console.log("entered password : " + password)
+        await browser.pause(1000)
+     }
+
+    async clickLoginBtn () {
+        scrollAndClick(await this.loginBtn)
+        console.log("clicked on login button")
+        await browser.pause(2000)
+    }
+
+  async getErrorMessage(){
+      return await getText(this.errorMsg)
     }
 
     // async prevPageButtonIsClickable () {
@@ -88,4 +104,4 @@ class HomePage {
 
 }
 
-export default new HomePage();
+export default new LoginPage();

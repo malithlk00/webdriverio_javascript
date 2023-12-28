@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.js",
-    "wdio:test": "npx wdio run ./wdio.conf.js --spec Pagination.js"
+    "wdio:test": "npx wdio run ./wdio.conf.js --spec loginTests.js"
   },
   "keywords": [],
   "author": "",

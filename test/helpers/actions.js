@@ -16,6 +16,19 @@ module.exports = {
       }
     },
 
+    scrollAndType: async ($element, value, timeout = 20000) => {
+      try {
+      await $element.scrollIntoView();
+      await $element.waitForClickable({ timeout: timeout });
+      await $element.clearValue();
+      await $element.setValue(value);
+  
+      }
+      catch(error){
+        throw new Error('Failed to execute scrollAndType on the target element');
+      }
+    },
+
     getText: async ($element, timeout = 20000) => {
       try {
       await $element.scrollIntoView();

@@ -1,3 +1,5 @@
 {
-    "QUERY_PARAMS" : "?searchUser=&searchRole=&searchStatus=&sort=&pageNo=1&pageSize=10"
+    "QUERY_PARAMS" : "?searchUser=&searchRole=&searchStatus=&sort=&pageNo=1&pageSize=10",
+    "USERNAME" : "standard_user",
+    "PASSWORD" : "secret_sauce"
 }
